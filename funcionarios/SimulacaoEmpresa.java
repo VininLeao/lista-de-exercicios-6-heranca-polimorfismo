@@ -4,17 +4,13 @@ import java.util.Random;
 
 public class SimulacaoEmpresa {
     public static void main(String[] args) {
-        // Array para armazenar os funcionários
         Funcionario[] funcionarios = new Funcionario[10];
         Random rand = new Random();
 
-        // Adicionar funcionários ao array
         for (int i = 0; i < funcionarios.length; i++) {
-            // Gerar dados aleatórios para cada funcionário
             String nome = "Funcionario" + (i + 1);
             String codigoFuncional = String.format("%03d", i + 1);
-
-            // Distribuição dos funcionários
+            
             if (i < 1) {
                 // 10% Gerentes
                 funcionarios[i] = new Funcionario(nome, codigoFuncional, new Gerente());
@@ -33,7 +29,6 @@ public class SimulacaoEmpresa {
             }
         }
 
-        // Imprimir todos os funcionários
         for (Funcionario funcionario : funcionarios) {
             System.out.println(funcionario);
         }
